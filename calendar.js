@@ -6,7 +6,7 @@ let month = today.getMonth() + 1;
 
 if (process.argv[2] === "-m") {
     month = Number(process.argv[3]);
-    if(!(month >= 1 && month <= 12)) {
+    if(!(Number.isInteger(month) && month >= 1 && month <= 12)) {
         console.log("月は1から12の間で指定してください。");
         process.exit(1);
     }
